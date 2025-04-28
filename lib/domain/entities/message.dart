@@ -1,5 +1,5 @@
 enum FromWho{me,hers}
-
+//identidad atomica: la unidad mas pequeña
 class Message {
   final String text;
   final String? imageUrl;
@@ -8,7 +8,7 @@ class Message {
   Message({
     required this.text,
     this.imageUrl,
-    required this.fromWho});
+    required this.fromWho,});
 
 
 }

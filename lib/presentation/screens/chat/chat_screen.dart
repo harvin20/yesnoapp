@@ -44,9 +44,12 @@ class _ChatView extends StatelessWidget {
             Expanded(
               child:ListView.builder(
                 controller: chatProvider.chatScrollController,
-                itemCount: chatProvider.messageList.length ,
-                itemBuilder: (context, index) {                 
+                itemCount: chatProvider.messageList.length,
+                itemBuilder: (context, index) {           
+                  //instancia que sabra de quien es el mensaje       
                   final message = chatProvider.messageList[index];
+                  //si el residuo es 0 es della si no es 0 es mio
+                  //si es par es de ella, si es impar es el mio
                   return(message.fromWho == FromWho.hers)
                   ?  HerMessageBubble(message : message)
                   :  MyMessageBubble(message: message);
