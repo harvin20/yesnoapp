@@ -7,15 +7,16 @@ class ChatProvider extends ChangeNotifier {
   final getYesNoAnswer = GetYesNoAnswer();
 
   List<Message> messageList = [
-    Message(text: 'hola', fromWho: FromWho.me),
-    Message(text: 'ya regresaste', fromWho: FromWho.me),
+    //Message(text: 'hola', fromWho: FromWho.me),
+     //Message(text: 'ya regresaste', fromWho: FromWho.me),
   ];
 
   Future<void> sendMessage(String text) async {
-    if (text.isEmpty) return;
-    final newMessage = Message(text: text, fromWho: FromWho.me);
+    if (text.trim().isEmpty) return;
+    final newMessage = Message(text: text.trim(), fromWho: FromWho.me);
     //Agregar un nuevo mensaje a la lista
     messageList.add(newMessage);
+     print('flutter: Cantidad de mensajes: ${messageList.length}');
 
     if (text.endsWith('?')) {
       await herReply();
@@ -29,8 +30,8 @@ class ChatProvider extends ChangeNotifier {
   Future<void> herReply() async {
     final herMessage = await getYesNoAnswer.getAnswer();
     messageList.add(herMessage);
+    print('flutter: Cantidad de mensajes: ${messageList.length}');
     notifyListeners();
-
     moveScrollToBotton();
   }
 

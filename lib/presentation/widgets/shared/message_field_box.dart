@@ -14,6 +14,7 @@ class MessageFieldBox extends StatelessWidget {
 
     final textController = TextEditingController();
     final focusNode = FocusNode();
+   
     
     final outlineInputBorder = UnderlineInputBorder(
         borderSide: BorderSide(color: Colors.transparent),
