@@ -33,7 +33,7 @@ final Message message;
           ),
         ),
         SizedBox(height: 5,),
-
+        //signo de aclaracion: siempre va devolver una imagen
         _ImageBubble(message.imageUrl!),
 
         SizedBox(height:10,)

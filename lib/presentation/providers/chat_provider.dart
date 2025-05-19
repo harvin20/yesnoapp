@@ -26,12 +26,16 @@ class ChatProvider extends ChangeNotifier {
     notifyListeners();
     moveScrollToBotton();
   }
-
+//crear la respuesta de ella
   Future<void> herReply() async {
+     //obtener el mensaje de la petición HTTP
     final herMessage = await getYesNoAnswer.getAnswer();
+    //añadimos el mensaje de ella a la lista de mensajes 
     messageList.add(herMessage);
     print('flutter: Cantidad de mensajes: ${messageList.length}');
+    //notificar a provider los cambios
     notifyListeners();
+    //mover el scroll hasta el ultimo mensaje 
     moveScrollToBotton();
   }
 
